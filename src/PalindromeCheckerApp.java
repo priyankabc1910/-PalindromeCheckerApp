@@ -65,7 +65,32 @@ public class PalindromeCheckerApp {
         } else {
             System.out.println("The word \"" + text + "\" is NOT a Palindrome.");
         }
+// ------------------ UC5 ------------------
+        System.out.println("\nUC5: Stack-Based Palindrome Checker");
+        System.out.println("------------------------------------");
 
+        String stackInput = "noon";
+
+        java.util.Stack<Character> stack = new java.util.Stack<>();
+
+        for (char c : stackInput.toCharArray()) {
+            stack.push(c);
+        }
+
+        boolean isStackPalindrome = true;
+
+        for (char c : stackInput.toCharArray()) {
+            if (c != stack.pop()) {
+                isStackPalindrome = false;
+                break;
+            }
+        }
+
+        if (isStackPalindrome) {
+            System.out.println("The word \"" + stackInput + "\" is a Palindrome.");
+        } else {
+            System.out.println("The word \"" + stackInput + "\" is NOT a Palindrome.");
+        }
 
         System.out.println("\nProgram execution completed.");
     }

@@ -1,27 +1,27 @@
-/*
- * Use Case 1 – Application Entry & Welcome Message
- *
- * This program is the starting point of the
- * Palindrome Checker App.
- *
- * It only displays basic application details.
- * No palindrome checking logic is implemented yet.
- */
-
 public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-        // Welcome message
+        // UC1 – Welcome Message
         System.out.println("Welcome to Palindrome Checker App!");
-        System.out.println("-----------------------------------");
-
-        // Application details
         System.out.println("Application Name : Palindrome Checker");
-        System.out.println("Version          : 1.0");
+        System.out.println("Version : 1.0");
+        System.out.println("--------------------------------------");
 
-        // Startup confirmation
-        System.out.println("\nApplication started successfully.");
-        System.out.println("Moving to next module...");
+        // UC2 – Hardcoded Palindrome
+        String word = "madam";
+        String reversed = "";
+
+        for (int i = word.length() - 1; i >= 0; i--) {
+            reversed = reversed + word.charAt(i);
+        }
+
+        if (word.equals(reversed)) {
+            System.out.println("The word \"" + word + "\" is a Palindrome.");
+        } else {
+            System.out.println("The word \"" + word + "\" is NOT a Palindrome.");
+        }
+
+        System.out.println("Program execution completed.");
     }
 }

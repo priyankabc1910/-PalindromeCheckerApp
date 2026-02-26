@@ -38,6 +38,34 @@ public class PalindromeCheckerApp {
         } else {
             System.out.println("The word \"" + input + "\" is NOT a Palindrome.");
         }
+        // ------------------ UC4 ------------------
+        System.out.println("\nUC4: Character Array Based Palindrome Check");
+        System.out.println("------------------------------------------------");
+
+        String text = "radar";
+
+        char[] characters = text.toCharArray();
+
+        int start = 0;
+        int end = characters.length - 1;
+
+        boolean isPalindrome = true;
+
+        while (start < end) {
+            if (characters[start] != characters[end]) {
+                isPalindrome = false;
+                break;
+            }
+            start++;
+            end--;
+        }
+
+        if (isPalindrome) {
+            System.out.println("The word \"" + text + "\" is a Palindrome.");
+        } else {
+            System.out.println("The word \"" + text + "\" is NOT a Palindrome.");
+        }
+
 
         System.out.println("\nProgram execution completed.");
     }

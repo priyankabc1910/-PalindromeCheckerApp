@@ -91,7 +91,32 @@ public class PalindromeCheckerApp {
         } else {
             System.out.println("The word \"" + stackInput + "\" is NOT a Palindrome.");
         }
+        // ------------------ UC6 ------------------
+        System.out.println("\nUC6: Queue + Stack Based Palindrome Check");
+        System.out.println("------------------------------------------------");
 
+        String qsInput = "civic";
+
+        java.util.Queue<Character> queue = new java.util.LinkedList<>();
+
+        java.util.Stack<Character> stackQS = new java.util.Stack<>();
+
+        for (char c : qsInput.toCharArray()) {
+            queue.add(c);     // Enqueue
+            stackQS.push(c);  // Push
+        }
+
+        boolean isQSPalindrome = true;
+
+        while (!queue.isEmpty()) {
+            if (!queue.remove().equals(stackQS.pop())) {
+                isQSPalindrome = false;
+                break;
+            }
+        }
+
+        System.out.println("Input : " + qsInput);
+        System.out.println("Is Palindrome? : " + isQSPalindrome);
         System.out.println("\nProgram execution completed.");
     }
 }

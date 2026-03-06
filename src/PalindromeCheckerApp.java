@@ -117,29 +117,31 @@ public class PalindromeCheckerApp {
 
         System.out.println("Input : " + qsInput);
         System.out.println("Is Palindrome? : " + isQSPalindrome);
-        // ------------------ UC7 ------------------
-        System.out.println("\nUC7: Deque-Based Optimized Palindrome Checker");
+        // ------------------ UC8 ------------------
+        System.out.println("\nUC8: Linked List Based Palindrome Checker");
         System.out.println("------------------------------------------------");
 
-        String dequeInput = "refer";
+        String llInput = "madam";
 
-        java.util.Deque<Character> deque = new java.util.ArrayDeque<>();
+        java.util.LinkedList<Character> list = new java.util.LinkedList<>();
 
-        for (char c : dequeInput.toCharArray()) {
-            deque.addLast(c);
+// Convert string to LinkedList
+        for (char c : llInput.toCharArray()) {
+            list.add(c);
         }
 
-        boolean isDequePalindrome = true;
+        boolean isLLPalindrome = true;
 
-        while (deque.size() > 1) {
-            if (!deque.removeFirst().equals(deque.removeLast())) {
-                isDequePalindrome = false;
+// Compare from both ends
+        while (list.size() > 1) {
+            if (!list.removeFirst().equals(list.removeLast())) {
+                isLLPalindrome = false;
                 break;
             }
         }
 
-        System.out.println("Input : " + dequeInput);
-        System.out.println("Is Palindrome? : " + isDequePalindrome);
+        System.out.println("Input : " + llInput);
+        System.out.println("Is Palindrome? : " + isLLPalindrome);
         System.out.println("\nProgram execution completed.");
     }
 }
